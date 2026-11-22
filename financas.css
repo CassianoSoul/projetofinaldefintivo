@@ -1,0 +1,20 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--gold:#f5c431;--mint:#5fd38d;--paper:#fff7e0;--ink:#1a1405}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0;background:#07131d;color:var(--paper);font-family:'Atkinson Hyperlegible',system-ui,sans-serif}
+body{display:flex;align-items:center;justify-content:center}
+#w{position:relative;width:min(100vw,calc((100vh - 12px)*16/9));aspect-ratio:16/9;container-type:inline-size}
+canvas#c{width:100%;height:100%;display:block;image-rendering:pixelated;background:#0f2a43}
+#ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(5,14,22,.78);padding:3cqw}
+#ov[hidden]{display:none}
+.card{background:var(--paper);color:var(--ink);max-width:62cqw;padding:3cqw 3.4cqw;border:.5cqw solid #7a5200;box-shadow:.8cqw .8cqw 0 #000a;text-align:left;font-size:max(14px,2.1cqw);line-height:1.45}
+.card.dark{background:#0d2234;color:var(--paper);border-color:var(--gold)}
+.card h1,.card h2{font-family:'Press Start 2P',monospace;font-weight:400;font-size:max(12px,2.2cqw);line-height:1.5;margin:0 0 1.6cqw}
+.card h1{font-size:max(14px,3cqw);color:var(--gold)}
+.card hr{border:0;border-top:.3cqw dashed currentColor;opacity:.4;margin:1.4cqw 0}
+.card p{margin:0 0 1cqw}.card kbd{background:#ffffff1c;border:1px solid #fff5;border-radius:4px;padding:0 .6cqw;font:inherit;font-weight:700}
+button{font:inherit;font-family:'Press Start 2P',monospace;font-size:max(11px,1.6cqw);background:var(--gold);color:var(--ink);border:0;border-bottom:.5cqw solid #9b7410;padding:1.2cqw 2cqw;cursor:pointer;margin-top:1cqw}
+button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#tc{display:none;position:absolute;left:0;right:0;bottom:2cqw;justify-content:space-between;padding:0 3cqw;pointer-events:none}
+#tc div{display:flex;gap:2cqw}#tc button{pointer-events:auto;width:9cqw;height:9cqw;padding:0;border-radius:50%;font-size:3cqw;opacity:.75;touch-action:none}
+@media (pointer:coarse){#tc{display:flex}}
+.o{display:block;width:100%;text-align:left;margin:.8cqw 0;font-family:inherit;font-size:max(14px,2cqw)}

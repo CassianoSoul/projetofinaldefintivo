@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mestre da Campanha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="marketing.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="hud" id="hud" hidden>
+    <div class="brand"><i></i>Mestre da Campanha</div>
+    <div class="stats">
+      <span class="pill" id="pRound"></span>
+      <span class="pill">Pontos <b id="pScore">0</b></span>
+      <button class="btn ghost small" type="button" data-act="guide">Guia da área</button>
+    </div>
+  </div>
+  <main id="app"></main>
+</div>
+
+<div class="overlay" id="guide" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+    <div class="panel-head">
+      <h2 id="guideTitle">Guia da área de marketing</h2>
+      <button class="btn ghost small" type="button" id="guideClose" data-act="guide-close">Fechar</button>
+    </div>
+    <p class="lead">Consulte quando quiser, até no meio de uma rodada. Cada tópico é curto.</p>
+
+    <details open>
+      <summary>O que é marketing?</summary>
+      <p>Marketing é tudo que uma empresa faz para entender as pessoas, oferecer algo que elas querem e fazer essa oferta chegar até elas. Vender é só uma parte. Antes vem escutar o cliente e, depois da venda, vem manter a relação.</p>
+    </details>
+    <details>
+      <summary>Os 4 Ps do marketing</summary>
+      <ul>
+        <li><b>Produto:</b> o que é vendido e que problema resolve.</li>
+        <li><b>Preço:</b> quanto custa e de que forma a pessoa paga.</li>
+        <li><b>Praça:</b> onde e como o cliente encontra e compra.</li>
+        <li><b>Promoção:</b> como a marca comunica e chama atenção. É a parte que você joga aqui.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Público-alvo e persona</summary>
+      <p>Público-alvo é o grupo de pessoas com mais chance de querer o produto. Persona é um personagem inventado que representa esse grupo: idade, rotina, o que quer e onde passa o tempo. Quem tenta falar com todo mundo costuma não falar com ninguém.</p>
+    </details>
+    <details>
+      <summary>Canais: orgânico, pago e tradicional</summary>
+      <ul>
+        <li><b>Orgânico:</b> não se paga para aparecer. Exemplos: posts, newsletter, grupos de mensagem, indicação de clientes.</li>
+        <li><b>Pago:</b> a marca paga para o anúncio aparecer, e pode escolher quem vê.</li>
+        <li><b>Tradicional:</b> TV, rádio, jornal e outdoor. Alcançam muita gente, custam mais e são mais difíceis de medir.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Gancho e copy</summary>
+      <p>Copy é o texto que leva a pessoa a agir. Gancho é a frase que prende a atenção nos primeiros segundos. Um bom gancho é curto, específico e fala de algo que o público sente. Frases genéricas e cheias de jargão passam despercebidas.</p>
+    </details>
+    <details>
+      <summary>Métricas: como saber se funcionou</summary>
+      <ul>
+        <li><b>Alcance:</b> quantas pessoas viram a campanha.</li>
+        <li><b>Engajamento:</b> curtidas, comentários e compartilhamentos.</li>
+        <li><b>Conversão:</b> quantas pessoas fizeram a ação desejada, como comprar ou se cadastrar.</li>
+        <li><b>CAC:</b> custo para conquistar um cliente novo.</li>
+        <li><b>Retenção:</b> quantos clientes voltam a comprar.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Quem trabalha com marketing</summary>
+      <ul>
+        <li><b>Social media:</b> cuida das redes e conversa com o público.</li>
+        <li><b>Redator (copywriter):</b> escreve anúncios, e-mails e textos de site.</li>
+        <li><b>Designer:</b> cria a parte visual: logo, posts, embalagens.</li>
+        <li><b>Gestor de tráfego:</b> monta e acompanha anúncios pagos.</li>
+        <li><b>Analista de dados:</b> lê os números e mostra o que deu certo.</li>
+        <li><b>Pesquisador de mercado:</b> descobre o que as pessoas pensam e querem.</li>
+        <li><b>Brand manager:</b> cuida da imagem e dos valores da marca.</li>
+        <li><b>Assessor de imprensa:</b> leva a marca para jornais, blogs e podcasts.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Marketing com ética</summary>
+      <p>Propaganda boa é honesta: não promete o que o produto não entrega. Dados pessoais também têm dono. No Brasil, a LGPD exige que a empresa explique para que usa os dados e respeite a escolha da pessoa.</p>
+    </details>
+  </div>
+</div>
+
+<script src="bridge.js"></script>
+<script src="marketing.js"></script>
+</body>
+</html>

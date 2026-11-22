@@ -1,0 +1,6 @@
+ADMINIX - todos os arquivos na mesma pasta (sem subpastas).
+Vercel: envie todos estes arquivos juntos. O index.html é a página inicial.
+- Fotos da tela de avaliação: adicione foto1.jpg, foto2.jpg e foto3.jpg junto dos outros arquivos.
+- Painel do administrador: aperte a tecla Delete 5 vezes.
+- Cada jogo tem uma fase só e termina com o botão "Jogar novamente".
+- As avaliações ficam salvas no navegador de cada visitante (localStorage). Para juntar as de todos, é preciso um servidor.

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mesa de Triagem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="gestao.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><span class="stripe" aria-hidden="true"></span>Mesa de Triagem</div>
+    <div class="tools">
+      <button id="btnGuiaTopo" class="ghost" type="button">Guia</button>
+      <button id="som" class="ghost" type="button" aria-pressed="true">Som ligado</button>
+    </div>
+  </header>
+
+  <section id="telaInicio" class="panel">
+    <div class="kicker">Expediente aberto</div>
+    <h1 class="title">Mesa de Triagem</h1>
+    <p class="lead">O malote chegou e a mesa está cheia. Leve cada documento ao departamento certo antes que o prazo termine e aprenda como funciona a área administrativa no caminho.</p>
+    <ul class="rules">
+      <li>Arraste o documento até a bandeja, toque nela ou use as teclas 1 a 5.</li>
+      <li>Três erros ou prazos perdidos encerram o expediente.</li>
+      <li>Documentos com carimbo de urgente valem o dobro e vencem mais rápido.</li>
+      <li>A cada 5 acertos seguidos a pontuação sobe.</li>
+      <li>O expediente tem só 10 documentos. Chegou ao fim, é só jogar novamente.</li>
+      <li>O botão Guia abre a explicação de cada área quando você quiser. O tempo para enquanto você lê.</li>
+    </ul>
+    <div>
+      <div class="kicker" style="margin-bottom:8px">Guia dos departamentos</div>
+      <div class="legend" id="legenda"></div>
+    </div>
+    <div class="row">
+      <button id="btnIniciar" class="btn" type="button">Abrir expediente</button>
+      <button id="btnGuiaInicio" class="btn alt" type="button">Ler o guia das áreas</button>
+    </div>
+    <span class="best" id="recordeInicio"></span>
+  </section>
+
+  <section id="telaJogo" hidden>
+    <div class="app">
+      <div class="hud" aria-label="Painel de pontos">
+        <div id="hPontos"><span class="k">Pontos</span><span class="v" id="vPontos">0</span></div>
+        <div id="hNivel"><span class="k">Documento</span><span class="v" id="vNivel">1</span></div>
+        <div id="hSeq"><span class="k">Sequência</span><span class="v"><span id="vSeq">0</span><small id="vMult"></small></span></div>
+        <div id="hErros"><span class="k">Erros</span><div class="pips" id="pips"></div></div>
+      </div>
+      <div class="stage" id="stage">
+        <div class="deck"><div class="doc" id="doc" role="img" aria-label="Documento a ser arquivado"></div></div>
+      </div>
+      <div class="feedback" id="fb" role="status" aria-live="polite"><span class="chip">Dica</span><p>Arraste o documento até a bandeja certa, toque numa bandeja ou use as teclas 1 a 5.</p></div>
+      <div class="trays" id="trays"></div>
+      <p class="hint">Teclas 1 a 5 arquivam sem usar o mouse. O botão Guia pausa o jogo e explica cada área.</p>
+    </div>
+  </section>
+
+  <section id="telaFim" class="panel" hidden>
+    <div class="kicker">Fim do expediente</div>
+    <div>
+      <div class="score-big" id="fScore">0</div>
+      <div class="best" id="fRecorde"></div>
+    </div>
+    <div class="rank" id="fRank"></div>
+    <div class="stats">
+      <div><b id="fAcertos">0</b><span>documentos arquivados</span></div>
+      <div><b id="fSeq">0</b><span>maior sequência</span></div>
+      <div><b id="fNivel">1</b><span>erros</span></div>
+    </div>
+    <div>
+      <div class="kicker" style="margin-bottom:8px">Para revisar</div>
+      <ul class="review" id="fRevisar"></ul>
+    </div>
+    <div class="row">
+      <button id="btnDeNovo" class="btn" type="button">Jogar novamente</button>
+      <button id="btnGuiaFim" class="btn alt" type="button">Guia das áreas</button>
+      <button id="btnInicio" class="ghost" type="button">Início</button>
+    </div>
+  </section>
+</div>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mTitulo" tabindex="-1">
+    <div id="mCorpo"></div>
+    <div class="modal-actions" id="mAcoes"></div>
+  </div>
+</div>
+
+<script src="bridge.js"></script>
+<script src="gestao-conteudo.js"></script>
+<script src="gestao-licoes.js"></script>
+<script src="gestao-jogo.js"></script>
+</body>
+</html>
